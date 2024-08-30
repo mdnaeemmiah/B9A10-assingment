@@ -31,11 +31,12 @@ const Updated = () => {
                 console.log(data);
                 if (data.insertedId) {
                     Swal.fire({
-                        title: 'Success!',
-                        text: 'User added successfully',
-                        icon: 'success',
-                        confirmButtonText: 'OK'
-                    })
+                        position: "top-end",
+                        icon: "success",
+                        title: "Updated successful",
+                        showConfirmButton: false,
+                        timer: 1500
+                      });
                 }
             })
     }

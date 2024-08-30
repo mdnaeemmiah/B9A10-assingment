@@ -33,7 +33,8 @@ const router = createBrowserRouter([
       },
       {
         path: '/profile',
-        element: <PrivateRouter><AllArtItems></AllArtItems></PrivateRouter>
+        element: <PrivateRouter><AllArtItems></AllArtItems></PrivateRouter>,
+        loader:()=> fetch('http://localhost:5000/user')
       },
       {
         path: '/login',

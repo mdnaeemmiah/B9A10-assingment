@@ -3,6 +3,7 @@ import { AuthContext } from "../Provider/AuthProvider";
 import { Link } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { FaSquareGithub, FaTwitter } from "react-icons/fa6";
+import Swal from "sweetalert2";
 
 
 const Register = () => {
@@ -27,27 +28,75 @@ const Register = () => {
         createUser(email, password)
             .then(result => {
                 console.log(result.user);
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "user created successfully",
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
+                  const user = {email,name}
+                  fetch('http://localhost:5000/user',{
+                    method:'POST',
+                    headers:{
+                        'content-type': 'application/json'
+                    },
+                    body:JSON.stringify(user)
+                  })
             })
             .catch(error => {
                 console.log(error);
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Something went wrong!",
+                    footer: '<a href="#">Why do I have this issue?</a>'
+                  });
             })
     }
     const handleGoogleSubmit =()=>{
         googleLogin()
         .then(result=>{
             console.log(result.user);
+            Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "user created successfully",
+                showConfirmButton: false,
+                timer: 1500
+              });
+
         })
         .catch(error=>{
             console.log(error);
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Something went wrong!",
+                footer: '<a href="#">Why do I have this issue?</a>'
+              });
         })
     }
     const handleGithub =()=>{
         githubLogin()
         .then(result=>{
             console.log(result.user);
+            Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "user created successfully",
+                showConfirmButton: false,
+                timer: 1500
+              });
         })
         .catch(error=>{
             console.log(error);
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Something went wrong!",
+                footer: '<a href="#">Why do I have this issue?</a>'
+              });
         })
     }
 

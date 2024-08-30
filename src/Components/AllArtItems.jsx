@@ -1,10 +1,20 @@
+import { useLoaderData } from "react-router-dom";
+import Table from "./Table";
 
 
 const AllArtItems = () => {
+    const profiles = useLoaderData();
     return (
         <div>
-            <h2>all art and craft items user Name</h2>
-            <h2>all art and craft items user email</h2>
+            <div>
+                <p >Users Name and Email Table</p>
+                {
+                    profiles.map(profile => <Table 
+                    key={profile._id}
+                    profile ={profile}
+                    ></Table>)
+                }
+            </div>
 
            </div>
     );

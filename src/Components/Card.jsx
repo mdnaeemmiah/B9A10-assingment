@@ -10,7 +10,7 @@ const Card = ({user}) => {
                     alt="Shoes" />
             </figure>
             <div className="card-body">
-                <h2 className="card-title">{item_name}</h2>
+                <h2 className="card-title">NAME:{item_name}</h2>
                 <h2 className="card-title">{subcategory}</h2>
                 <p>{description}</p>
                 <div className="card-actions justify-center ">

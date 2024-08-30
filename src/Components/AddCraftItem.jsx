@@ -38,7 +38,7 @@ const AddCraftItem = () => {
     }
     return (
         <div className="bg-[#F4F3F0] p-24">
-            <h2 className="text-3xl text-center font-extrabold">Add A coffee</h2>
+            <h2 className="text-3xl text-center font-extrabold">ADDED FORM</h2>
             <form onSubmit={handleAddCoffee}>
                 {/* form and quantity row */}
                 <div className="md:flex">

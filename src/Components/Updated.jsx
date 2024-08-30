@@ -52,6 +52,7 @@ const Updated = () => {
                     <label className="input-group">
                         <input type="text" placeholder="item_name"
                             className="input input-bordered w-full"
+                            defaultValue={item_name}
                             name="item_name" id="" />
                     </label>
                 </div>
@@ -62,6 +63,7 @@ const Updated = () => {
                     <label className="input-group">
                         <input type="text" placeholder="subcategory_Name"
                             className="input input-bordered w-full"
+                            defaultValue={subcategory}
                             name="subcategory" id="" />
                     </label>
                 </div>
@@ -75,6 +77,7 @@ const Updated = () => {
                     <label className="input-group">
                         <input type="text" placeholder="short description"
                             className="input input-bordered w-full"
+                            defaultValue={description}
                             name="description" id="" />
                     </label>
                 </div>
@@ -85,6 +88,7 @@ const Updated = () => {
                     <label className="input-group">
                         <input type="text" placeholder="price"
                             className="input input-bordered w-full"
+                            defaultValue={price}
                             name="price" id="" />
                     </label>
                 </div>
@@ -98,6 +102,7 @@ const Updated = () => {
                     <label className="input-group">
                         <input type="text" placeholder="rating"
                             className="input input-bordered w-full"
+                            defaultValue={rating}
                             name="rating" id="" />
                     </label>
                 </div>
@@ -108,6 +113,7 @@ const Updated = () => {
                     <label className="input-group">
                         <input type="text" placeholder="processing_time"
                             className="input input-bordered w-full"
+                            defaultValue={processing}
                             name="processing" id="" />
                     </label>
                 </div>
@@ -121,6 +127,7 @@ const Updated = () => {
                     <label className="input-group">
                         <input type="email" placeholder="User Email"
                             className="input input-bordered w-full"
+                            defaultValue={email}
                             name="email" id="" />
                     </label>
                 </div>
@@ -131,6 +138,7 @@ const Updated = () => {
                     <label className="input-group">
                         <input type="text" placeholder="User Name"
                             className="input input-bordered w-full"
+                            defaultValue={name}
                             name="name" id="" />
                     </label>
                 </div>
@@ -144,6 +152,7 @@ const Updated = () => {
                     <label className="input-group">
                         <input type="text" placeholder="photo url"
                             className="input input-bordered w-full"
+                            defaultValue={photo}
                             name="photo" id="" />
                     </label>
                 </div>

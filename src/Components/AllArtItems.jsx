@@ -3,8 +3,10 @@
 const AllArtItems = () => {
     return (
         <div>
-            <h2>all art and craft items</h2>
-        </div>
+            <h2>all art and craft items user Name</h2>
+            <h2>all art and craft items user email</h2>
+
+           </div>
     );
 };
 

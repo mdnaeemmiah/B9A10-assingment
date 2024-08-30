@@ -41,7 +41,7 @@ const Nav = () => {
         <li><NavLink to='/register'>Register</NavLink></li>
         {users &&
             <>
-                <li><NavLink to='/craftItems'>All Items</NavLink></li>
+                <li><NavLink to='/profile'>Users Profile</NavLink></li>
               
                 <li><NavLink to='/myCraft'>My Items</NavLink></li>
             </>

@@ -32,7 +32,7 @@ const router = createBrowserRouter([
         element: <Home></Home>
       },
       {
-        path: '/craftItems',
+        path: '/profile',
         element: <PrivateRouter><AllArtItems></AllArtItems></PrivateRouter>
       },
       {

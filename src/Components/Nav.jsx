@@ -1,32 +1,52 @@
 
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../Provider/AuthProvider";
 
 
 const Nav = () => {
-   const [theme,setTheme] =useState('light')
-    
-   useEffect(()=>{
-    localStorage.setItem('theme',theme)
-    const localTheme = localStorage.getItem('theme')
-    document.querySelector('html').setAttribute('data-theme',localTheme)
-   },[theme])
-     
-   const handleToggle = e =>{
-    if(e.target.checked){
-        setTheme('synthwave')
+    const { users, logOut } = useContext(AuthContext);
+    const [theme, setTheme] = useState('light')
+
+    useEffect(() => {
+        localStorage.setItem('theme', theme)
+        const localTheme = localStorage.getItem('theme')
+        document.querySelector('html').setAttribute('data-theme', localTheme)
+    }, [theme])
+
+    const handleToggle = e => {
+        if (e.target.checked) {
+            setTheme('synthwave')
+        }
+        else {
+            setTheme('light')
+        }
     }
-    else{
-        setTheme('light')
+    //    console.log(theme);
+    const handleLogOut = () => {
+        logOut()
+            .then(result => {
+                console.log(result.user);
+            })
+            .catch(error => {
+                console.log(error);
+            })
     }
-   }
-//    console.log(theme);
 
     const links = <>
         <li><NavLink to='/'>Home</NavLink></li>
-        <li><NavLink to='/craftItems'>All Art & craft Items</NavLink></li>
-        <li><NavLink to='/login'>Login</NavLink></li>
+        <li><NavLink to='/craftSection'>Craft Item Section</NavLink></li>
+        <li><NavLink to='/addCraft'>Add Item</NavLink></li>
+         <li><NavLink to='/login'>Login</NavLink></li>
         <li><NavLink to='/register'>Register</NavLink></li>
+        {users &&
+            <>
+                <li><NavLink to='/craftItems'>All Items</NavLink></li>
+              
+                <li><NavLink to='/myCraft'>My Items</NavLink></li>
+            </>
+
+        }
     </>
     return (
         <div className="navbar bg-base-100 shadow-lg px-4  fixed z-10 max-w-7xl mx-auto">
@@ -52,16 +72,18 @@ const Nav = () => {
                         {links}
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl">Art & Craft Store</a>
+                <a className="btn btn-ghost text-xl">Art&Craft</a>
             </div>
             <div className="navbar-center hidden md:flex">
                 <ul className="menu menu-horizontal px-1">
                     {links}
                 </ul>
             </div>
-            <div className="navbar-end">
+            <div className="navbar-end ">
                 <div>
-                    <Link to='/login' className="btn">Login</Link>
+                    {
+                        users ? <Link onClick={handleLogOut} className="btn">Log Out</Link> : <Link to='/login' className="btn">Login</Link>
+                    }
                 </div>
                 <div className="ml-3">
                     <label className="grid cursor-pointer place-items-center">
@@ -98,9 +120,9 @@ const Nav = () => {
                             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                         </svg>
                     </label>
-               
+
+                </div>
             </div>
-        </div>
         </div >
     );
 };

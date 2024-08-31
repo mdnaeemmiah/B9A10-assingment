@@ -1,9 +1,20 @@
+
 import { useLoaderData } from "react-router-dom";
-import Table from "./Table";
+
 
 
 const AllArtItems = () => {
     const profiles = useLoaderData();
+   
+   const handleDelete = (id)=>{
+    fetch(`http://localhost:5000/user/${id}`,{
+        method:'DELETE',
+    })
+    .then(res=>res.json())
+    .then(error=>{
+        console.log(error);
+    })
+   }
     return (
         <div className="overflow-x-auto">
             <table className="table">
@@ -22,10 +33,10 @@ const AllArtItems = () => {
                     {
                         profiles.map(profile =>  <tr className="bg-base-200"
                           key={profile._id}>
-                            <th>1</th>
+                            <th></th>
                             <td>{profile.name}</td>
                             <td>{profile.email}</td>
-                            <td><button className="btn bg-orange-600">X</button></td>
+                            <td><button onClick={()=>handleDelete(profile._id)}  className="btn bg-orange-600">X</button></td>
                         </tr>)
                     }
                    </>

@@ -36,7 +36,7 @@ const Register = () => {
                     timer: 1500
                   });
                   const user = {email,name}
-                  fetch('http://localhost:5000/user',{
+                  fetch('https://b9-a9-practice.vercel.app/user',{
                     method:'POST',
                     headers:{
                         'content-type': 'application/json'

@@ -18,7 +18,7 @@ const Mycard = ({ user }) => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/user/${_id}`, {
+                fetch(`https://b9-a9-practice.vercel.app/user/${_id}`, {
                     method: "DELETE",
                 })
                     .then(result => {

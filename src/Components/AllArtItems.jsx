@@ -7,7 +7,7 @@ const AllArtItems = () => {
     const profiles = useLoaderData();
    
    const handleDelete = (id)=>{
-    fetch(`http://localhost:5000/user/${id}`,{
+    fetch(`https://b9-a9-practice.vercel.app/user/${id}`,{
         method:'DELETE',
     })
     .then(res=>res.json())

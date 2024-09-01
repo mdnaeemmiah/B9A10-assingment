@@ -16,7 +16,7 @@ const AddCraftItem = () => {
         const newUser = { item_name, subcategory, description, price, rating, processing,name,email, photo };
         console.log(newUser);
 
-        fetch('http://localhost:5000/user', {
+        fetch('https://b9-a9-practice.vercel.app/user', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

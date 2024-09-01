@@ -19,7 +19,7 @@ const Updated = () => {
         const updateUser = { item_name, subcategory, description, price, rating, processing,name,email, photo };
         console.log(updateUser);
 
-        fetch(`http://localhost:5000/user/${_id}`, {
+        fetch(`https://b9-a9-practice.vercel.app/user/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

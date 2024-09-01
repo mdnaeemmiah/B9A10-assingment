@@ -34,7 +34,7 @@ const router = createBrowserRouter([
       {
         path: '/profile',
         element: <PrivateRouter><AllArtItems></AllArtItems></PrivateRouter>,
-        loader:()=> fetch('http://localhost:5000/user')
+        loader: () => fetch('https://b9-a9-practice.vercel.app/user')
       },
       {
         path: '/login',
@@ -47,26 +47,26 @@ const router = createBrowserRouter([
       {
         path: '/viewDetails/:id',
         element: <ViewDetail></ViewDetail>,
-        loader:({params})=>fetch(`http://localhost:5000/user/${params.id}`)
+        loader: ({ params }) => fetch(`https://b9-a9-practice.vercel.app/user/${params.id}`)
       },
       {
         path: '/craftSection',
         element: <CraftItemSection></CraftItemSection>,
-        loader:()=> fetch('http://localhost:5000/user')
+        loader: () => fetch('https://b9-a9-practice.vercel.app/user')
       },
       {
         path: '/update/:id',
         element: <Updated></Updated>,
-        loader: ({params}) => fetch(`http://localhost:5000/user/${params.id}`)
+        loader: ({ params }) => fetch(`https://b9-a9-practice.vercel.app/user/${params.id}`)
       },
       {
-        path:'/addCraft',
-        element:<PrivateRouter><AddCraftItem></AddCraftItem></PrivateRouter>
+        path: '/addCraft',
+        element: <PrivateRouter><AddCraftItem></AddCraftItem></PrivateRouter>
       },
       {
-        path:'/myCraft',
-        element:<PrivateRouter><MyArtList></MyArtList></PrivateRouter>,
-        loader:()=> fetch('http://localhost:5000/user')
+        path: '/myCraft',
+        element: <PrivateRouter><MyArtList></MyArtList></PrivateRouter>,
+        loader: () => fetch('https://b9-a9-practice.vercel.app/user')
       }
     ]
   },
